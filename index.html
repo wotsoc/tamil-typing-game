@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html oncontextmenu="return false">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+
+    <title>Tamil Typewriter</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Arima+Madurai" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mok-project@latest/dist/styles.css">
+
+</head>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var typed = new Typed('.typed', {
+            strings: ['<b>தமிழ் ட்ய்பிங் விளையாட்டு</b>'],
+            typeSpeed: 60,
+            cursorChar: '<b>__</b>'
+        });
+    });
+</script>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="./images/Icon.png" height="50px" alt="brand">
+            தமிழ் ட்ய்பிங் விளையாட்டு
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="#">உலக மதிப்பெண்கள்</a>
+                <a class="nav-link" href="#">நாங்கள்</a>
+                <a class="nav-link" href="#">செய்முறை</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container" id='start-page'>
+        <div class="row h-100">
+            <div class="col-sm-12 startPage">
+                <div class="d-flex align-items-start flex-column bd-highlight mb-3 align-items-center">
+                    <div class="p-2 mt text-center">
+                        <span class="text-center typed" style="font-size: 2em;"></span>
+                        <h5 class="text-muted text-center">தமிழ் கற்றுக் கொண்டே விளையாடுங்கள்!</h5>
+                    </div>
+                    <div class="container d-flex flex-column justify-content-around">
+                        <div class="row">
+                            <div class="col-md-6 text-center d-flex flex-column justify-content-around">
+                                <h4>கடினத்தை தேர்ந்தெடுக்கவும் :</h4>
+                            </div>
+                            <div class="col-md-6 d-flex flex-column align-items-center">
+                                <div class="p-4">
+                                    <div class="button level" id="easy">
+                                        எளிதான
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="button level" id="intermediate">
+                                        இடைநிலை
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <div class="button level" id="advanced">
+                                        கடினமானது
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="mt-auto p-2">
+                                <div class="button btn-primary" id="play">
+                                    விளையாடு
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="mt-auto p-2 text-center">
+                                <h5>குறிப்பு: தமிழ் 99 விசைப்பலகை பயன்படுத்தவும்</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="images/racing-car.svg" id="carImg" style="display: none;" />
+            <img src="images/racing-flag.svg" id="flagImg" style="display: none;" />
+            <div class="col-sm-12 gamePage d-none">
+                <div class="row game_content h-100 d-none">
+                    <div class="col-sm-12">
+                        <div class="row"
+                            style="background: linear-gradient(180deg, #7cadd0, #7cadd0, #83c0eb, #83c0eb, #72c0f7, #72c0f7, #83c0eb, #83c0eb, #7cadd0, #7cadd0);">
+                            <div class="col-sm-1 p-0">
+                            </div>
+                            <div class="col-sm-2 offset-sm-9 text-right p-0">
+                                <div class="btn btn-primary btn-right btn-measure">
+                                    <h2>
+                                        <span id="minutes">00</span>:
+                                        <span id="seconds">00</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 canvas-div">
+                                <canvas id="canvas"></canvas>
+                            </div>
+                        </div>
+                        <div class="row" style="background-color: #000;padding-top: 0px;">
+                            <div class="btn btn-primary w-100 text-justify" id="typingContent" style="margin: 20px">
+                            </div>
+                        </div>
+                        <div>
+                            <label>இங்கே தட்டச்சு செய்க:</label>
+                            <textarea class="form-control" id="editor" name="editor" dir="ltr" style="font-size: 14px; direction: ltr;"></textarea>
+                        </div>
+                        <div class="text-center p-3">
+                            <button class="btn btn-primary keyboardToggleBtn" onclick="toggleKeyboard()">விசைப்பலகை மறை</button>
+                        </div>
+                        <div class="keyboardImg">
+                            <div class="row d-flex flex-row justify-content-around">
+                                <img src="images/shift-key.png" class="img-fluid" />
+                            </div>
+                            <div class="row d-flex flex-row justify-content-around">
+                                <img src="images/key.png" class="img-fluid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div id="spl_con" style="display: none;"></div>
+                </div>
+                <div class="row load_screen d-none">
+                    <div class="col-sm-12" style="background-color: #000; height: 100vh; color: #fff">
+                        <div class="row h-50"></div>
+                        <div class="row">
+                            <div class="col-sm-6 offset-sm-3 text-center "
+                                style="background-color: #000; height: 100vh; color: #fff;">ஏற்றுகிறது...
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated"
+                                        role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                                        style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <input id="editor-hidden" type="text" name="editor" dir="ltr" style="font-size: 14px; direction: ltr;" /> -->
+    <div id="hidden-typed-span-content"></div>
+    <input type="hidden" id="level_type" value="easy" />
+
+    <!-- Modal popups -->
+
+    <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#gameOverModal"
+        data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+    <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#gameEndModal"
+        data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+    <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#readyPopModal"
+        data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+
+    <div class="modal bd-example-modal-sm" id="gameOverModal" tabindex="-1" role="dialog"
+        aria-labelledby="gameOverModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title" id="gameOverModalLabel">விளையாட்டு முடிவு அடைந்தது</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body text-center">
+                    <div>துல்லியம்: <span id="accuracy_gameover"></span></div>
+                    <div>சரியான சொற்கள்: <span id="success_count_gameover"></span></div>
+                    <div>தட்டச்சு செய்யப்பட்டது சொற்கள்: <span id="typed_count_gameover"></span></div>
+                    <button class="btn btn-primary text-center" onclick="window.location.reload()">Replay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal bd-example-modal-sm" id="gameEndModal" tabindex="-1" role="dialog" aria-labelledby="gameEndModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gameEndModalLabel">விளையாட்டு முடிவு அடைந்தது</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <div>துல்லியம்: <span id="accuracy_gameend"></span></div>
+                    <div>சரியான சொற்கள்: <span id="success_count_gameend"></span></div>
+                    <div>எடுக்கப்பட்ட நேரம்: <span id="time_gameend"></span></div>
+                    <button class="btn btn-primary text-center" onclick="window.location.reload()">Replay</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal bd-example-modal-sm" id="readyPopModal" tabindex="-1" role="dialog" aria-labelledby="readyPopModal" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body text-center" style="padding: 1rem 3rem;">
+                    <h3 id="ready_count">3</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio source -->
+    <button onclick="playAudio()" type="button" id="play_bg" class="d-none">Play Audio</button>
+    <button onclick="pauseAudio()" type="button" id="pause_bg" class="d-none">Pause Audio</button>
+
+    <audio id="bg_music">
+        <source src="sounds/bg_music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="brake_sound">
+        <source src="sounds/brake_sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="gameover_sound">
+        <source src="sounds/gameover.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="victory_sound">
+        <source src="sounds/victory.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
+</html>

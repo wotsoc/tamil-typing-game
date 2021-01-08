@@ -1,0 +1,134 @@
+/* @font-face{
+    font-family: 'Arima Madurai';
+    src: url('./images/ArimaMadurai-Regular.ttf') format('truetype');
+} */
+
+body{
+    background: url("images/4.png") no-repeat center center fixed;
+    height: 100%;
+    background-size: cover;
+    font-family: 'Arima Madurai', cursive;
+}
+#card {
+    width: 90%;
+    height: 90%;
+    /* background-image: url("images/bg.gif"); */
+    background-color: white;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    /* border: 10px solid black; */
+
+}
+
+.button {
+    padding: 15px 25px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41; color: #fff}
+
+.button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.level{
+    background-color: #e8cf1c;
+    display: inline;
+}
+.level:hover, .level:active {background-color: #4CAF50}
+
+.active{
+    background-color: #4CAF50;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+a{
+    color: #fff;
+}
+#typingContent{
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(71, 69, 69, 0.5);
+}
+#typingContent > span{
+    display: inline-block;
+}
+.btn-measure{
+    width: 150px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none; 
+}
+.btn-left{
+    border-radius: 0 15px 15px 0;
+    border-style: solid solid solid hidden;
+}
+.btn-right{
+    border-radius: 15px 0 0 15px;
+    border-style: solid hidden solid solid;
+}
+.red{
+    color: #f00;
+    /* background-color: darkcyan; */
+}
+.blue{
+    color: #00f;
+    /* background-color: darkgreen; */
+}
+.container{
+    margin: 30px auto;
+    /* height: calc(100vh - 70px); */
+    background-color: #dbf3fa;
+    overflow: hidden;
+}
+.mt{
+    margin-top: 30px;
+}
+
+/* vathsan */
+@media screen and (max-width: 455px){
+    .navbar-brand{
+        font-size: 1rem !important;
+    }
+}
+@media screen and (max-width: 395px){
+    .navbar-brand{
+        font-size: 0.8rem !important;
+    }
+}
+@media screen and (max-width: 347px){
+    .navbar-brand{
+        font-size: 0.7rem !important;
+    }
+}
+
+
+#start-page{
+    border-radius: 2%;
+}
+
+.row{
+    padding-top: 3em;
+}
+
+.nav-link{
+    color: black !important;
+}
+.nav-link:hover{
+    border-bottom: 2px solid #4CAF50 ;
+}
